@@ -35,5 +35,5 @@
 Update to this version by running the following command in your terminal:
 
 ```bash
-deno upgrade jsr:@nin0chat/callisto@0.1.1
+deno add jsr:@nin0chat/callisto@0.1.1
 ```
