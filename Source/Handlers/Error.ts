@@ -1,6 +1,6 @@
 /*!
  * Callisto, a simple and powerful bot package for nin0-dev's chat server.
- * Copyright (c) 2022 Kodarru and contributors.
+ * Copyright (c) 2022 nin0chat and contributors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ import type { Client } from "@/Main.ts";
 
 export function On_Error(error: string, client: Client) {
     return () => {
+        client.Logger.Debug("Event Handler `On_Error` has been triggered.");
         client.Emit("error");
         client.Logger.Error("An unexpected error occurred! " + error);
     };

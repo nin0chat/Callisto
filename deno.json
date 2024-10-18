@@ -1,6 +1,6 @@
 {
     "name": "@nin0chat/callisto",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "exports": "./Source/Main.ts",
     "imports": {
         "@std/assert": "jsr:@std/assert@1",

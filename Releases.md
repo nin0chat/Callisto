@@ -7,6 +7,26 @@
 
 ---
 
+## Version `0.1.2` 📝
+
+- Added `<Message>.isMentioned` method. This property is used to check if the message is mentioning the bot.
+    - Example:
+    ```ts
+    client.On("message", (message) => {
+        if (message.isMentioned()) {
+            message.Reply("Hello!");
+        }
+    });
+    ```
+- Improved logging for WebSocket events.
+- Updated license notices at the top of each file to reflect the new repository owner change.
+
+Update to this version by running the following command in your terminal:
+    
+```bash
+deno add jsr:@nin0chat/callisto@0.1.2
+```
+
 ## Version `0.1.1` 📝
 
 - Added `<Client>.Once` method. This method is the same as `<Client>.On`, but it only runs once.
@@ -31,9 +51,3 @@
     - `@/Main.ts`
     - `@/Utilities/Types.ts`
     - `@/Utilities/Logger.ts`
-
-Update to this version by running the following command in your terminal:
-
-```bash
-deno add jsr:@nin0chat/callisto@0.1.1
-```

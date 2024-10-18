@@ -1,6 +1,6 @@
 /*!
  * Callisto, a simple and powerful bot package for nin0-dev's chat server.
- * Copyright (c) 2022 Kodarru and contributors.
+ * Copyright (c) 2022 nin0chat and contributors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,6 +35,7 @@
  * @property {function} isDiscord - Checks if the message was sent by Discord.
  * @property {function} isUser - Checks if the message was sent by a user.
  * @property {function} isSelf - Checks if the message was sent by the bot itself.
+ * @property {function} isMentioned - Checks if the bot was mentioned in the message.
  * @property {function} Send - Sends a message to the chat server.
  * @property {function} Reply - Replies to the message.
  */
@@ -60,6 +61,7 @@ export interface Message {
     isDiscord(): boolean;
     isUser(): boolean;
     isSelf(): boolean;
+    isMentioned(): boolean;
     Send(content: string): void;
     Reply(content: string): void;
 }

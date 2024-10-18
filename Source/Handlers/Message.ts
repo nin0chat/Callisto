@@ -1,6 +1,6 @@
 /*!
  * Callisto, a simple and powerful bot package for nin0-dev's chat server.
- * Copyright (c) 2022 Kodarru and contributors.
+ * Copyright (c) 2022 nin0chat and contributors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,13 +19,12 @@
 // ******
 
 import type { Client } from "@/Main.ts";
-import type * as Callisto from "@/Utilities/Types.ts";
 import * as Constants from "@/Utilities/Constants.ts";
 
 // ******
 
 export function On_Message(data: any, client: Client) {
-    client.Logger.Debug("Received new message");
+    client.Logger.Debug("Event Handler `On_Message` has been triggered.");
 
     const _data = JSON.parse(data.toString());
 
@@ -47,6 +46,9 @@ export function On_Message(data: any, client: Client) {
         },
         isSelf: function () {
             return _data.username === client.ClientData.username;
+        },
+        isMentioned: function () {
+            return _data.content?.includes(client.ClientData.username);
         },
         Send: function (content: string) {
             client.Send(content);
